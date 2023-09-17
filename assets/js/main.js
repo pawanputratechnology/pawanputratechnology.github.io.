@@ -2,7 +2,7 @@
   "use strict";
 
   /*===========================================
-	=            Windows Load          =
+  =            Windows Load          =
 =============================================*/
   $(window).on("load", function () {
     preloader();
@@ -18,14 +18,14 @@
   /*navigation*/
 
   /*===========================================
-	=            Preloader          =
+  =            Preloader          =
 =============================================*/
   function preloader() {
     $("#preloader").delay(0).fadeOut();
   }
 
   /*===========================================
-	=    		Mobile Menu			      =
+  =    		Mobile Menu			      =
 =============================================*/
   //SubMenu Dropdown Toggle
   if ($(".tgmenu__wrap li.menu-item-has-children ul").length) {
@@ -37,18 +37,26 @@
   //Mobile Nav Hide Show
   if ($(".tgmobile__menu").length) {
     var mobileMenuContent = $(".tgmenu__wrap .tgmenu__main-menu").html();
-    $(".tgmobile__menu .tgmobile__menu-box .tgmobile__menu-outer").append(
-      mobileMenuContent
-    );
+    // $(".tgmobile__menu .tgmobile__menu-box .tgmobile__menu-outer").append(
+    //   mobileMenuContent
+    // );
+
+    $(document).ready(function () {
+      $('.tgmobile__menu-outer ul li').click(function () {
+        $('li').removeClass("active");
+        $(this).addClass("active");
+      });
+    });
+
 
     //Dropdown Button
-    $(".tgmobile__menu li.menu-item-has-children .dropdown-btn").on(
-      "click",
-      function () {
-        $(this).toggleClass("open");
-        $(this).prev("ul").slideToggle(300);
-      }
-    );
+    // $(".tgmobile__menu li.menu-item-has-children .dropdown-btn").on(
+    //   "click",
+    //   function () {
+    //     $(this).toggleClass("open");
+    //     $(this).prev("ul").slideToggle(300);
+    //   }
+    // );
     //Menu Toggle Btn
     $(".mobile-nav-toggler").on("click", function () {
       $("body").addClass("mobile-menu-visible");
@@ -64,7 +72,7 @@
   }
 
   /*===========================================
-	=     Menu sticky & Scroll to top      =
+  =     Menu sticky & Scroll to top      =
 =============================================*/
   $(window).on("scroll", function () {
     var scroll = $(window).scrollTop();
@@ -80,7 +88,7 @@
   });
 
   /*===========================================
-	=           Scroll Up  	         =
+  =           Scroll Up  	         =
 =============================================*/
   if ($(".scroll-to-target").length) {
     $(".scroll-to-target").on("click", function () {
@@ -96,7 +104,7 @@
   }
 
   /*===========================================
-	=          Data Background    =
+  =          Data Background    =
 =============================================*/
   $("[data-background]").each(function () {
     $(this).css(
@@ -110,7 +118,7 @@
   });
 
   /*===========================================
-	=      Select2 Active      =
+  =      Select2 Active      =
 =============================================*/
   $("#course-cat").select2({
     tags: true,
@@ -120,7 +128,7 @@
   });
 
   /*===========================================
-	=          Slider Active        =
+  =          Slider Active        =
 =============================================*/
   function sliderAction() {
     $(".slider__active")
@@ -139,7 +147,7 @@
   }
 
   /*===========================================
-	=          Brand Active       =
+  =          Brand Active       =
 =============================================*/
   $(".brand-active").slick({
     dots: false,
@@ -185,7 +193,7 @@
   });
 
   /*===========================================
-	=       Course Slider Active       =
+  =       Course Slider Active       =
 =============================================*/
   $(".courses-slider-active").slick({
     dots: false,
@@ -264,7 +272,7 @@
   });
 
   /*===========================================
-	=      Testimonial Active 02         =
+  =      Testimonial Active 02         =
 =============================================*/
   $(".testimonial-active").slick({
     dots: false,
@@ -314,7 +322,7 @@
   });
 
   /*===========================================
-	=      Shop Active         =
+  =      Shop Active         =
 =============================================*/
   $(".shop-active").slick({
     dots: false,
@@ -364,7 +372,7 @@
   });
 
   /*===========================================
-	=      speaker Active         =
+  =      speaker Active         =
 =============================================*/
   $(".speakers-active").slick({
     dots: false,
@@ -431,7 +439,7 @@
   });
 
   /*===========================================
-	=       TweenMax Active   =
+  =       TweenMax Active   =
 =============================================*/
   $(".tg-motion-effects").mousemove(function (e) {
     parallaxIt(e, ".tg-motion-effects1", 70);
@@ -455,7 +463,7 @@
   }
 
   /*===========================================
-	=    		 Cart Active  	         =
+  =    		 Cart Active  	         =
 =============================================*/
   $(".cart-plus-minus").append(
     '<div class="dec qtybutton">-</div><div class="inc qtybutton">+</div>'
@@ -488,7 +496,7 @@
   });
 
   /*===========================================
-	=        Magnific Popup    =
+  =        Magnific Popup    =
 =============================================*/
   $(".popup-image").magnificPopup({
     type: "image",
@@ -503,7 +511,7 @@
   });
 
   /*===========================================
-	=         Isotope Active     =
+  =         Isotope Active     =
 =============================================*/
   $(".courses-active").imagesLoaded(function () {
     // init Isotope
@@ -528,7 +536,7 @@
   });
 
   /*===========================================
-	=        Wow Active      =
+  =        Wow Active      =
 =============================================*/
   function wowAnimation() {
     var wow = new WOW({
@@ -542,7 +550,7 @@
   }
 
   /*===========================================
-	=           Aos Active       =
+  =           Aos Active       =
 =============================================*/
   function aosAnimation() {
     AOS.init({
