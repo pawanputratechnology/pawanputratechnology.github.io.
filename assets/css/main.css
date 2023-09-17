@@ -2850,10 +2850,10 @@ textarea {
   padding-left: 15px;
   padding-right: 15px;
 }
-.brand__item img {
+/* .brand__item img {
   filter: grayscale(1);
   opacity: 0.4;
-}
+} */
 .brand__item a {
   display: -webkit-box;
   display: -moz-box;
