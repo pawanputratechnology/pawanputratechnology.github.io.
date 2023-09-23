@@ -14,41 +14,42 @@
   /*navigation*/
 
   // Get all navigation links
-     // Function to set the active class based on scroll position
-        function setActiveLink(index) {
-            // Remove active class from all links
-            $(".navigation li").removeClass("active");
-            
-            // Add active class to the selected link
-            $(".navigation li:eq(" + index + ")").addClass("active");
-        }
-
-        // Function to update active link on scroll
-        function updateActiveLinkOnScroll() {
-            var scrollPosition = $(window).scrollTop();
-
-            // Check the position of each section and set the active link accordingly
-            $("section").each(function (index) {
-                var sectionTop = $(this).offset().top;
-                var sectionBottom = sectionTop + $(this).outerHeight();
-
-                if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
-                    setActiveLink(index);
-                }
-            });
-        }
-
-        // Call the updateActiveLinkOnScroll function on scroll
-        $(window).on("scroll", function () {
-            updateActiveLinkOnScroll();
-        });
-
-        // Call the updateActiveLinkOnScroll function on page load
-        $(document).ready(function () {
-            updateActiveLinkOnScroll();
-        });
 
   /*navigation*/
+
+  // Function to set the active class based on scroll position
+  function setActiveLink(index) {
+    // Remove active class from all links
+    $(".navigation li").removeClass("active");
+
+    // Add active class to the selected link
+    $(".navigation li:eq(" + index + ")").addClass("active");
+  }
+
+  // Function to update active link on scroll
+  function updateActiveLinkOnScroll() {
+    var scrollPosition = $(window).scrollTop();
+
+    // Check the position of each section and set the active link accordingly
+    $("section").each(function (index) {
+      var sectionTop = $(this).offset().top;
+      var sectionBottom = sectionTop + $(this).outerHeight();
+
+      if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+        setActiveLink(index);
+      }
+    });
+  }
+
+  // Call the updateActiveLinkOnScroll function on scroll
+  $(window).on("scroll", function () {
+    updateActiveLinkOnScroll();
+  });
+
+  // Call the updateActiveLinkOnScroll function on page load
+  $(document).ready(function () {
+    updateActiveLinkOnScroll();
+  });
 
   /*===========================================
   =            Preloader          =
