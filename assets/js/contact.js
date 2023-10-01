@@ -24,7 +24,7 @@ contactForm.addEventListener("submit", function (e) {
   // Send the form data to Firebase using Axios
   axios
     .post(
-      "https://https://pawanputratechnology-48873-default-rtdb.firebaseio.com/contacts.json",
+      "https://pawanputratechnology-48873-default-rtdb.firebaseio.com/contacts.json",
       formData
     )
     .then(function (response) {
