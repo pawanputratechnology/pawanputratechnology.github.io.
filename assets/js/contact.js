@@ -19,6 +19,7 @@ contactForm.addEventListener("submit", function (e) {
     phone: phone,
     subject: subject,
     message: message,
+    date: new Date(),
   };
 
   // Send the form data to Firebase using Axios
